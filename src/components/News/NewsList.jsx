@@ -20,7 +20,6 @@ export const NewsList = () => {
     return news.filter(news => news.title.toLocaleLowerCase());
   };
 
-  // <h3 className={css.notNewsFoundText}>Waiting please...</h3>
   return (
     <>
       {loading ? (
