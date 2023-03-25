@@ -4,7 +4,6 @@ import css from './News.module.css';
 import { fetchNews } from 'utilities/helpers';
 
 export const NewsList = () => {
-  // console.log('NewsList');
   const [loading, setLoading] = useState(false);
   const [news, setNews] = useState([]);
 
@@ -17,10 +16,7 @@ export const NewsList = () => {
   }, []);
 
   const getVisibleNews = () => {
-    const ret = news.filter(news => news.title.toLocaleLowerCase());
-    // console.log('ret', ret);
-    // console.log('getVisibleNews');
-    return ret;
+    return news.filter(news => news.title.toLocaleLowerCase());
   };
 
   return (
