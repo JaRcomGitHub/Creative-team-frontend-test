@@ -4,10 +4,12 @@
 // import { useDispatch } from 'react-redux';
 
 // import { useState } from "react";
+// import { useTranslation } from 'react-i18next';
 
 // const FormSearchNews = () => {
 //    const [valueIn, setValueIn] = useState('');
 
+//    const { t } = useTranslation();
 //    const dispatch = useDispatch();
 
 // const onClickNews = (e) => {
