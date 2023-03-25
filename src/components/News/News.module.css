@@ -20,7 +20,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
-  color: #111111;
+  color: var(--black-color);
   margin-bottom: 40px;
   list-style: none;
 }
@@ -63,10 +63,9 @@
 
 .linkNews {
   text-decoration-line: underline;
-  color: #f59256;
+  color: var(--accent-color);
 }
 
-/* ---------------------------------------- */
 .newsList {
   margin-bottom: 100px;
 }
@@ -83,5 +82,5 @@
 }
 
 .notNewsFoundText {
-  color: #111111;
+  color: var(--black-color);
 }
