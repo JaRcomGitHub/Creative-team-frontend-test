@@ -1,0 +1,45 @@
+.ul {
+  list-style: none;
+  display: flex;
+  gap: 80px;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 1279px) {
+  .ul {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.navItem {
+  font-weight: 500;
+  /* font-size:  */
+}
+
+/* .linkStyled {
+  color: } */
+
+/* .linkStyled:hover {
+    color: 
+  } */
+
+/* .linkStyled:active {
+    color: 
+  } */
+
+.ul {
+  list-style: none;
+  display: flex;
+  gap: 80px;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 1279px) {
+  .ul {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+}
