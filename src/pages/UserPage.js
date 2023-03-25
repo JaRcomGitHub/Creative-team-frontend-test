@@ -8,27 +8,15 @@ import { useState, useEffect } from 'react';
 import { fetchUserAndPets } from '../utilities/helpers';
 import { selectors } from '../redux/auth/selectors';
 import { useSelector } from 'react-redux';
-// import { Dna } from 'react-loader-spinner';
-// import {
-//   Box,
-//   Button,
-//   Flex,
-//   Heading,
-//   Text,
-//   useDisclosure,
-// } from '@chakra-ui/react';
-// import { BsFillPlusCircleFill } from 'react-icons/bs';
 
 export default function UserPage() {
-  const [loading, setLoading] = useState(false);
-  console.log('loading', loading);
+
   const [userAndPets, setUserAndPets] = useState([]);
   const [userFoto, setUserFoto] = useState(null);
 
   const token = useSelector(selectors.getToken);
 
   useEffect(() => {
-    setLoading(true);
     const fetchData = async () => {
       const response = await fetchUserAndPets(token);
       setUserAndPets(response);
@@ -36,56 +24,35 @@ export default function UserPage() {
     };
     fetchData()
       .catch(console.error)
-      .finally(() => setLoading(false));
   }, [token]);
 
   const { pets, user } = userAndPets;
-
   return (
     <>
       <div className={css.container}>
         {user && (
-          <>
+
+          <div className={css.container_userInfo}>
             <h2 className={css.title}>My information:</h2>
             <div className={css.container__userdata}>
-              <UserFoto userFoto={userFoto} user={user} />
-              <EditFoto setUserFoto={setUserFoto} />
+              <div className={css.userPhoto}>
+                <UserFoto userFoto={userFoto} user={user} />
+                <EditFoto setUserFoto={setUserFoto} />
+              </div>
               <UserData user={user} />
-              <Logout />
             </div>
-          </>
+            <Logout />
+          </div>
         )}
 
-        {/* <h2 className={css.title}>My pets:</h2> */}
         {pets && (
-          <>
+          <div className={css.container_pets}>
             <h2 className={css.title}>My pets:</h2>
-
-            {/* <Button
-                aria-label="add pet"
-                onClick={onOpen}
-                rightIcon={
-                  <BsFillPlusCircleFill size="40px" fill="#F59256" m="0px" />
-                }
-                bg="transparent"
-                fontSize={{ base: '20px', md: '28px' }}
-                color="black"
-                lineHeight={{ base: '1.35' }}
-                fontWeight={{ base: '500' }}
-                type="button"
-                px="0px"
-                _hover={{ color: 'accent.accentOrange' }}
-                transitionProperty={'color'}
-                transitionDuration={'250ms'}
-                transitionTimingFunction={'cubic-bezier(0.4, 0, 0.2, 1)'}
-              >
-                <Text mr="7px">Add pet</Text>
-              </Button> */}
-
             <div className={css.container__petsdata}>
               <PetsData pets={pets} />
             </div>
-          </>
+          </div>
+
         )}
       </div>
     </>

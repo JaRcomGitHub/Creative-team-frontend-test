@@ -3,17 +3,18 @@ import { AddNoticeButton } from '../AddNoticeButton/AddNoticeButton';
 
 import css from './NoticesCategoriesList.module.css';
 
-
 export const NoticesCategoriesList = ({ notices }) => {
-
   return (
     <>
       <AddNoticeButton />
-      <ul className={css.list}>
-        {notices.map(notice => {
-          return <NoticeCategoryItem key={notice._id} item={notice} />;
-        })}
-      </ul>
+
+      {notices ? (
+        <ul className={css.list}>
+          {notices.map(notice => {
+            return <NoticeCategoryItem key={notice._id} item={notice} />;
+          })}
+        </ul>
+      ) : null}
     </>
   );
 };
