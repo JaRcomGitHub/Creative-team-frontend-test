@@ -78,51 +78,51 @@ const NoticesPage = () => {
   //         });
   // }
 
-  useEffect(() => {
-    console.log('selectedNotices', selectedNotices);
-    if (selectedNotices.length === 0 && isLogged) {
-      console.log(
-        'selectedNotices.length === 0 && isLogged',
-        selectedNotices.length === 0 && isLogged
-      );
-      getAllSelectedNotices()
-        .then(data => {
-          setSelectedNotices(data);
-        })
-        .catch(error => {
-          console.log('Error', error);
-        });
-    }
-  }, [isLogged, selectedNotices]);
+  // useEffect(() => {
+  //   console.log('selectedNotices', selectedNotices);
+  //   if (selectedNotices.length === 0 && isLogged) {
+  //     console.log(
+  //       'selectedNotices.length === 0 && isLogged',
+  //       selectedNotices.length === 0 && isLogged
+  //     );
+  //     getAllSelectedNotices()
+  //       .then(data => {
+  //         setSelectedNotices(data);
+  //       })
+  //       .catch(error => {
+  //         console.log('Error', error);
+  //       });
+  //   }
+  // }, [isLogged, selectedNotices]);
 
-  useEffect(() => {
-    const queryFromSearchParams = searchParams.get('query');
-    if (!category) {
-      return;
-    }
+  // useEffect(() => {
+  //   const queryFromSearchParams = searchParams.get('query');
+  //   if (!category) {
+  //     return;
+  //   }
 
-    if (category === 'favorite' && isLogged) {
-      const findNotices = selectedNotices.filter(item =>
-        item.title.includes(queryFromSearchParams)
-      );
-      //    console.log('findNotices', findNotices);
+  //   if (category === 'favorite' && isLogged) {
+  //     const findNotices = selectedNotices.filter(item =>
+  //       item.title.includes(queryFromSearchParams)
+  //     );
+  //     //    console.log('findNotices', findNotices);
 
-      if (findNotices.length === 0) {
-        return toast.error('Nothing found for your request!');
-      }
-      setSelectedNotices(findNotices);
-    }
+  //     if (findNotices.length === 0) {
+  //       return toast.error('Nothing found for your request!');
+  //     }
+  //     setSelectedNotices(findNotices);
+  //   }
 
-    if (category !== 'favorite') {
-      getNoticesByCategories(category)
-        .then(data => {
-          setNotices(data);
-        })
-        .catch(error => {
-          console.log('Error', error);
-        });
-    }
-  }, [category, searchParams, selectedNotices, isLogged]);
+  //   if (category !== 'favorite') {
+  //     getNoticesByCategories(category)
+  //       .then(data => {
+  //         setNotices(data);
+  //       })
+  //       .catch(error => {
+  //         console.log('Error', error);
+  //       });
+  //   }
+  // }, [category, searchParams, selectedNotices, isLogged]);
 
   // const [selected, setSelected] = useState(false);
 
