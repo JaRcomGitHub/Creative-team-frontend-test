@@ -1,11 +1,48 @@
 * {
   margin: 0;
   box-sizing: border-box;
+} /* перенести в основные стили */
+
+.hide {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 @media screen and (min-width: 1280px) {
-  .wrapper {
-    display: none;
+  .burgerWrapper {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .authBurgerMenu {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
   }
 }
 
@@ -49,7 +86,7 @@
 
 .linkSt:active {
   background-color: #f59256;
-  /* color: #ffffff; */
+  /* color: #ffffff; уже */
   cursor: pointer;
 }
 
@@ -71,7 +108,7 @@
   justify-content: space-between;
   cursor: pointer;
   /* padding-top: 26px;
-  padding-right: 30px; */
+  padding-right: 30px; уже */
 }
 @media screen and (min-width: 320px) {
   .burgerMenu {
@@ -100,7 +137,6 @@
   display: flex;
   flex-direction: column;
   list-style: none;
-
   padding-top: 70px;
 }
 @media screen and (min-width: 320px) {
@@ -109,18 +145,18 @@
   }
 }
 
-.auth {
+.authBurgerMenu {
   padding-bottom: 60px;
   display: flex;
   justify-content: space-evenly;
 }
 @media screen and (min-width: 768px) {
-  .auth {
+  .authBurgerMenu {
     display: none;
   }
 }
 
-.div {
+.divMenu {
   display: flex;
   justify-content: center;
   margin-left: auto;
@@ -128,7 +164,7 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .div {
+  .divMenu {
     display: none;
   }
 }
@@ -260,12 +296,12 @@
 
 .navItem {
   font-weight: 500;
-  /* font-size: ; */
+  /* font-size: ; уже */
   margin-bottom: 40px;
   text-align: center;
 }
 
-/* clicked*/
+/* clicked */
 .visible {
   display: inherit;
 }
