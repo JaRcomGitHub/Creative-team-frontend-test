@@ -1,9 +1,9 @@
-.div {
+.divTest {
   display: flex;
 }
 
 @media screen and (max-width: 767px) {
-  .div {
+  .divTest {
     display: none;
   }
 }
