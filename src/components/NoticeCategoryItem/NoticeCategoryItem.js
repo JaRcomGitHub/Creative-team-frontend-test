@@ -28,7 +28,6 @@ export const NoticeCategoryItem = ({ item }) => {
   const favorites = useSelector(selectFavorites);
   const [isFavorite, setIsFavorite] = useState(null);
 
-
   const userId = getUserIdFromLocalStorage();
 
   // let favoriteOrNot =
@@ -38,19 +37,19 @@ export const NoticeCategoryItem = ({ item }) => {
   // };
 
   useEffect(() => {
-    if(!isLogged){
-       return;
+    if (!isLogged) {
+      return;
     }
     let favoriteOrNot =
-    (favorites.find(favorite => favorite._id === item._id) && true) || false;
+      (favorites.find(favorite => favorite._id === item._id) && true) || false;
     setIsFavorite(favoriteOrNot);
     return;
   }, [isLogged, favorites, item._id]);
 
   useEffect(() => {
-    if(!isLogged){
+    if (!isLogged) {
       return;
-   }
+    }
     if (isFavorite === true) {
       console.log('isFavorite === true', isFavorite === true);
       return;
@@ -61,8 +60,10 @@ export const NoticeCategoryItem = ({ item }) => {
   }, [isFavorite, isLogged]);
 
   const handleDeleteFromFavorite = () => {
-    if(!isLogged){
-      return toast.warn('The user must be logged in to use this functionality!');
+    if (!isLogged) {
+      return toast.warn(
+        'The user must be logged in to use this functionality!'
+      );
     }
     dispatch(deleteFromFavorite(item._id));
     setIsFavorite(!isFavorite);
@@ -70,13 +71,14 @@ export const NoticeCategoryItem = ({ item }) => {
   };
 
   const handleAddToFavorite = () => {
-    if(!isLogged){
-      return toast.warn('The user must be logged in to use this functionality!');
+    if (!isLogged) {
+      return toast.warn(
+        'The user must be logged in to use this functionality!'
+      );
     }
     dispatch(addToFavorite(item._id));
     setIsFavorite(!isFavorite);
   };
-
 
   const removeNotices = () => {
     dispatch(deleteNotice(item._id));
@@ -95,7 +97,7 @@ export const NoticeCategoryItem = ({ item }) => {
       .catch(error => {
         toast.error(
           `Oops, something went wrong! Reload the page or try again later!`
-        )
+        );
         console.log('Error', error);
       });
   };
@@ -106,10 +108,10 @@ export const NoticeCategoryItem = ({ item }) => {
     <>
       <li className={css.item}>
         <div className={css.img_cover}>
-          {item.imageURL ? (<img src={item.imageURL} className={css.img} alt="Pet" />)
-            : null
-          }
-          
+          {item.imageURL ? (
+            <img src={item.imageURL} className={css.img} alt="Pet" />
+          ) : null}
+
           <p className={css.category}>{item.category}</p>
 
           {isFavorite ? (
