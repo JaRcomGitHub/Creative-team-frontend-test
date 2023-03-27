@@ -8,8 +8,8 @@ import { UserNav } from 'components/UserNav/UserNav';
 import { useSelector } from 'react-redux';
 import { selectors } from '../../redux/auth/selectors';
 // import { getIsRefreshing } from '../../redux/auth/selectors'
-import { ReactComponent as BgMenu } from '../../images/BgMenu.svg';
-import { ReactComponent as Close } from '../../images/Close.svg';
+import { ReactComponent as BgMenu } from '../../images/bgMenu.svg';
+import { ReactComponent as Close } from '../../images/close.svg';
 
 export const Header = () => {
   const isLoggedIn = useSelector(selectors.isLogged);
