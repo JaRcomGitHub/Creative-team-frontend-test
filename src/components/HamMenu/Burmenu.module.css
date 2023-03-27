@@ -1,7 +1,9 @@
 * {
   margin: 0;
   box-sizing: border-box;
-} /* перенести в основные стили */
+}
+
+/* перенести в основные стили */
 
 .hide {
   position: absolute;
@@ -53,6 +55,7 @@
   justify-content: flex-end;
   align-items: center;
 }
+
 @media screen and (max-width: 767px) {
   .bg {
     height: 3.5em;
@@ -110,21 +113,25 @@
   /* padding-top: 26px;
   padding-right: 30px; уже */
 }
+
 @media screen and (min-width: 320px) {
   .burgerMenu {
     width: 3em;
   }
 }
+
 @media screen and (min-width: 500px) {
   .burgerMenu {
     width: 4em;
   }
 }
+
 @media screen and (min-width: 700px) {
   .burgerMenu {
     width: 3em;
   }
 }
+
 @media screen and (min-width: 1000px) {
   .burgerMenu {
     width: 4em;
@@ -139,6 +146,7 @@
   list-style: none;
   padding-top: 70px;
 }
+
 @media screen and (min-width: 320px) {
   .bgNews {
     padding-top: 0;
@@ -150,6 +158,7 @@
   display: flex;
   justify-content: space-evenly;
 }
+
 @media screen and (min-width: 768px) {
   .authBurgerMenu {
     display: none;
@@ -179,6 +188,7 @@
   margin-left: 20px;
   text-decoration: none;
 }
+
 @media screen and (min-width: 768px) {
   .linkStyled {
     font-family: 'Manrope';
@@ -189,24 +199,29 @@
     letter-spacing: 0.04em;
   }
 }
+
 .linkStyled:hover {
   font-weight: 700;
 }
+
 @media screen and (max-width: 1280px) {
   .linkStyled:hover {
     text-decoration-line: underline;
   }
 }
+
 .linkStyled:active {
   font-weight: 700;
   color: #f59256;
   cursor: pointer;
 }
+
 @media screen and (max-width: 1280px) {
   .linkStyled:active {
     text-decoration-line: underline;
   }
 }
+
 .linkStyled:hover {
   color: #f59256;
   cursor: pointer;
@@ -339,6 +354,7 @@
   background-color: #212121;
   border-radius: 0.5em;
 }
+
 @media screen and (max-width: 767px) {
   .burger-bar {
     height: 5px;
@@ -369,6 +385,7 @@
   transition: ease-out 0.5s;
   width: 40px;
 }
+
 @media screen and (max-width: 767px) {
   .burger-bar.clicked:nth-child(3) {
     transform: rotate(135deg) translate(-0.15em, 0.89em);
