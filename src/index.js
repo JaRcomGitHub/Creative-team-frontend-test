@@ -9,8 +9,8 @@ import './index.css';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-      {/* <BrowserRouter basename="Creative-team-frontend-test"> */}
-      <BrowserRouter>
+      <BrowserRouter basename="Creative-team-frontend-test">
+      {/* <BrowserRouter> */}
         <App />
       </BrowserRouter>
     </Provider>
